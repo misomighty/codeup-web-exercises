@@ -1,0 +1,93 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    text-shadow: 1px 1px 1px #888;
+    background: url('http://www.pptbackgrounds.org/uploads/falling-rainbow-backgrounds-wallpapers.jpg')
+    no-repeat center center fixed;
+    background-size: cover;
+}
+
+.ribbon {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+div {
+    max-width: 600px;
+    margin: 0 auto;
+}
+h1 {
+    margin-bottom: 50px;
+}
+
+.arrow {
+    position: absolute;
+    top: -38px;
+    left: 51px;
+}
+
+.box {
+    position: relative;
+    float: left;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+    margin: 0 50px 50px 0;
+    padding: 10px;
+    color: #fff;
+    box-shadow: 2px 2px 2px #888888;
+
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.red {
+    background-color: red;
+
+}.orange {
+     background-color: orange;
+ }
+.yellow {
+      background-color: yellow;
+
+  }
+.green {
+       background-color: green;
+        clear: left;
+
+   }
+.blue {
+        background-color: blue;
+
+    }
+.violet {
+    background-color: darkviolet;
+
+     }
+
+a:link, a:visited {
+    text-decoration: none;
+}
+/*Link Effects from CodePen*/
+a.third:after{
+    left:50%;
+    -webkit-transform:translateX(-50%);
+    transform:translateX(-50%);
+}
+a,a:visited,a:hover,a:active{
+    -webkit-backface-visibility:hidden;
+    backface-visibility:hidden;
+    position:relative;
+    transition:0.5s color ease;
+    text-decoration:none;
+    color:#81b3d2;
+    font-size:1em;
+}
+a:hover{
+    color:#d73444;
+}
+a.after:after{
+    bottom:-0.25em;
+}

@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.top-banner h1{
+    color: darkred;
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    font-size: 1.5rem;
+    font-family: 'Dancing Script', cursive;
+}
+.container {
+    position: relative;
+    margin: 0 auto;
+    width: 60%;
+    max-height: 500px;
+    height: 100%;
+    overflow: auto;
+    border: 1px solid #ccc;
+}
+
+.top-banner {
+    height: 120px;
+    position: relative;
+    border-bottom: 1px solid #000;
+    border-radius: 2px;
+    background: url('http://images.all-free-download.com/images/graphicthumb/red_flowers_vector_art_558613.jpg')
+    no-repeat;
+    background-size: contain;
+}
+
+.red-flowers {
+    position: relative;
+    bottom: -19px;
+    right: 11px;
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+}
+.aside {
+    float: left;
+    width: 20%;
+    height: 200px;
+    max-height: 600px;
+    border-right: 1px solid #000;
+
+}
+
+
+.main-content {
+    float: left;
+    width: 80%;
+    height: 200px;
+    max-height: 600px;
+
+}

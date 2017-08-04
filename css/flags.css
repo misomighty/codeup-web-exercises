@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.abstractArtBox {
+    overflow: auto;
+    border: 2px solid #000;
+    max-width: 550px;
+    margin-bottom: 100px;
+}
+.AA-top-left {
+    float: left;
+    height: 100px;
+    width: 76px;
+    border: 2px solid #000;
+    border-bottom: 7px solid #000;
+}
+.AA-mid-left {
+    float: left;
+    height: 100px;
+    width: 76px;
+    border: 2px solid #000;
+    border-bottom: 7px solid #000;
+}
+.AA-big-right {
+    float: right;
+    height: 200px;
+    width: 470px;
+    background: red;
+    border: 2px solid #000;
+    border-left: 6px solid #000;
+    border-bottom: 5px solid #000;
+}
+.AA-bot-right {
+    float: left;
+    height: 100px;
+    width: 76px;
+    background: blue;
+    border: 2px solid #000;
+}
+.AA-bot-mid {
+    float: left;
+    height: 100px;
+    width: 438px;
+    border: 2px solid #000;
+    border-left: 6px solid #000;
+    border-right: 6px solid #000;
+}
+.AA-bot-corner-top {
+    float: left;
+    height: 50px;
+    width: 32px;
+    border: 2px solid #000;
+    border-bottom: 10px solid #000;
+}
+.AA-bot-corner-bot {
+    float: left;
+    height: 50px;
+    width: 32px;
+    border: 2px solid #000;
+    background-color: gold;
+}
+
+.uk {
+    position: relative;
+    background-color: blue;
+    height: 300px;
+    width: 546px;
+    border: 1px solid #000;
+    /*overflow: hidden;*/
+
+}
+
+.uk-left-x, .uk-right-x {
+    border: 20px solid #fff;
+}
+.uk-left-x {
+    position: relative;
+    width: 100px;
+    height: 500px;
+    left: 239px;
+    top: -40px;
+    transform: rotate(7deg) scale(1) skew(-57deg) translate(-127px);
+    background-color: red;
+    margin: 0;
+}
+.uk-right-x {
+    position: relative;
+    width: 100px;
+    height: 500px;
+    left: 211px;
+    top: -478px;
+    transform: rotate(61deg) scale(1) skew(-57deg) translate(-192px);
+    background-color: red;
+    margin: 0;
+}
+
+.uk-cross-x {
+    position: relative;
+    top: 0;
+    height: 200px;
+    width: 500px;
+    background-color: red;
+    border: 20px solid #fff;
+}
