@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Your Pizza</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Pizza World</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Order Online<span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Menu</a></li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Zip Code">
+                </div>
+                <button type="submit" class="btn btn-default">Search stores near you!</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Sign up</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="jumbotron hidden-xs">
+    <div class="container-fluid">
+
+        <h1>Welcome to Pizza World!</h1>
+
+    </div>
+</div><!-- /.jumbotron -->
+<h2>Build your own pizza!</h2>
+
+<div>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#crust" aria-controls="home" role="tab" data-toggle="tab">
+            <span class="badge">1</span>Size and Crust
+        </a></li>
+        <li role="presentation"><a href="#cheese" aria-controls="profile" role="tab" data-toggle="tab">
+            <span class="badge">2</span>Cheese and Sauce
+        </a></li>
+        <li role="presentation"><a href="#toppings" aria-controls="messages" role="tab" data-toggle="tab">
+            <span class="badge">3</span>Toppings
+        </a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="crust">
+            <!-- Panel 1 -->
+            <div class="panel panel-info">
+                <div class="panel-heading">Choose crust and size</div>
+                <div class="panel-body">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h6>Hand Tossed</h6>
+                        </div>
+                        <div class="panel-body">Garlic-seasoned crust with a rich buttery taste.</div>
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-info">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                         Small(10")
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-info">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                         Medium(12")
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- end inner panel-body -->
+                <div class="panel-body">
+                <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h6>Crunchy thin crust</h6>
+                        </div>
+                        <div class="panel-body">Thin enough for the ultimate crispy crunchy ratio.</div>
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-info">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                         Medium (12")
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-info">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                         Large (14")
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div><!-- end panel-default -->
+                </div><!-- end panel 2 body -->
+                <div class="footer text-right">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-primary">
+                                Next
+                                <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+
+                        </button>
+
+                    </div>
+                </div><!-- end 2nd panel heading -->
+                </div><!-- end inner panel-default -->
+                </div> <!--end footer -->
+            </div><!-- end main panel-info -->
+        </div> <!-- end crust tab -->
+        <div role="tabpanel" class="tab-pane" data-target="toppings" id="cheese">
+            <div class="panel panel-info">
+                <div class="panel-heading">Choose cheese and sauce</div>
+                <div class="panel-body">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><p>Cheese?</p></div>
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-info">
+                                <h6>Cheese</h6>
+                                <select class="form-control">
+                                    <option>Light</option>
+                                    <option>Normal</option>
+                                    <option>Extra</option>
+                                    <option>Double</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div><!-- end panel-default -->
+                </div><!-- end panel body -->
+
+
+                <div class="panel-body">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <p>Sauce?</p>
+                        </div><!-- end panel-heading (the background) -->
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-info">
+                                <h6>Sauce</h6>
+                                <select class="form-control">
+                                    <option>Tomato sauce</option>
+                                    <option>Marinara sauce</option>
+                                    <option>BBQ sauce</option>
+                                    <option>Alfredo sauce</option>
+                                </select>
+                            </li>
+
+                            <li class="list-group-item list-group-item-info">
+                                <h6>How much?</h6>
+                                <select class="form-control">
+                                    <option>Light</option>
+                                    <option>Normal</option>
+                                    <option>Extra</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div><!-- end panel-default (the outline) -->
+                </div> <!-- end panel body (the proper padding)-->
+                <div class="footer text-right">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="btn-group" role="group" aria-label="...">
+                                <button type="button" class="btn btn-primary"><span
+                                        class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>Previous
+                                </button>
+                                <button type="button" class="btn btn-primary">Next<span
+                                        class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end footer -->
+            </div><!-- end main panel -->
+        </div><!-- end cheese tab -->
+
+
+        <div role="tabpanel" class="tab-pane" id="toppings">
+            <div class="panel panel-info">
+                <div class="panel-heading">Choose toppings</div>
+                <div class="panel-body">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Choose meats
+                        </div><!-- end inner panel-heading -->
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-info">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="beef">
+                                        Beef
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-info">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="ham">
+                                        Ham
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-info">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="phillysteak">
+                                        Philly steak
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-info">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="bacon">
+                                        Bacon
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div><!-- end inner panel panel-default -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Choose non-meats</div>
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-info">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="green_peppers">
+                                        Green peppers
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-info">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="mushrooms">
+                                        Mushrooms
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-info">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="onions">
+                                        Onions
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-info">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="jalapeno_peppers">
+                                        Jalapeno peppers
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div><!-- end inner panel panel-default -->
+                </div><!-- end panel body -->
+                <div class="footer text-right">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="btn-group" role="group" aria-label="...">
+                                <button type="button" class="btn btn-primary">Checkout <span
+                                        class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end footer -->
+            </div><!-- end main panel -->
+        </div>
+    </div><!-- end of all panes (3) -->
+
+</div><!-- end of nav tab -->
+
+
+<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="application/javascript"
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="application/javascript" src="order-pizza.js"></script>
+</body>
+</html>
