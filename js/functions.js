@@ -57,7 +57,7 @@ function isOdd(num) {
 function calculateTip(bill, tip){
 
     tip = bill * tip;
-    return tip;
+    return "$" + tip;
 
 }
 /**
