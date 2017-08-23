@@ -43,6 +43,13 @@
     var defuser = document.getElementById('defuser');
     defuser.addEventListener('click', defuseTheBOM);
 })();
+
+function timeOut(){
+    var whereAreYou = setInterval(function(){
+        var answer = confirm("Are you still here?");
+            answer ? clearInterval(whereAreYou) : window.location = "http://www.google.com";
+    }, 5000);
+}
 </script>
 </body>
 </html>
