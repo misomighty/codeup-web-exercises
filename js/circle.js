@@ -1,4 +1,4 @@
-// (function() {
+(function() {
     "use strict";
 
     // create a circle object
@@ -8,7 +8,7 @@
         getArea: function () {
             // TODO: complete this method
             // hint: area = pi * radius^2
-            var area = Math.PI * Math.pow(circle.radius, 3);
+            var area = Math.PI * Math.pow(this.radius, 2);
             return area; // TODO: return the proper value
         },
 
@@ -16,7 +16,7 @@
             // TODO: complete this method.
 
             // If doRounding is true, round the result to the nearest integer.
-            doRounding ? console.log(Math.round(circle.getArea())) : console.log(circle.getArea());
+            doRounding ? console.log(Math.round(this.getArea())) : console.log(this.getArea());
             // Otherwise, output the complete value
 
             console.log("Area of a circle with radius: " + this.radius + ", is: " + this.getArea());
@@ -37,4 +37,4 @@
     circle.logInfo(false);
     console.log("Circle information rounded to the nearest whole number");
     circle.logInfo(true);
-// })();
+})();
