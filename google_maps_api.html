@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Map API</title>
+    <style type="text/css">
+        #renderMap {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="renderMap"></div>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoBaeTdEp4sl0m_deM9KIp_Zm6GTNgS-k"></script>
+
+
+
+
+<script>
+    //targets the document element where our map will render
+var mapArea = document.querySelector("#renderMap");
+var address = "Biga on the Banks";
+var biga = { lat: 29.423704, lng: -98.492007 };
+var geocoder = new google.maps.Geocoder();
+var domNode = "<img src='http://biga.com/wp-content/uploads/2014/06/logo.jpg' alt='biga' height='20px' width='20px'><strong><span>Best date night restaurant in town.</span></strong>";
+
+    var mapOptions = {
+
+        zoom: 20,
+
+        center: {
+            lat: 29.426791,
+            lng: -98.489602
+        }
+    };
+var renderMap = new google.maps.Map(mapArea, mapOptions);
+var favePlace = [
+    {
+        "address" : "Biga on the Banks",
+        content: "Best date night restaurant in town"
+    },
+    {
+        "address" : "Bliss San Antonio",
+        content: "Try their high-class pork 'n beans"
+    },
+    {
+        "address" : "Nabu Ramen San Antonio",
+        content: "The only decent ramen shop in San Antonio"
+    }
+]
+
+//    favePlace.forEach(obj){
+//
+//    }
+
+    geocoder.geocode(
+        {
+            "address": address
+        }, function(results, status){
+            if (status == google.maps.GeocoderStatus.OK) {
+                renderMap.setCenter(results[0].geometry.location);
+
+            } else {
+                console.log("Error - STATUS: " + status);
+            }
+        });
+
+
+var infoWindow = new google.maps.InfoWindow(
+    {
+        content: domNode
+    }
+);
+var marker = new google.maps.Marker(
+    {
+        position: biga,
+        map: renderMap,
+        animation: google.maps.Animation.BOUNCE
+
+    });
+
+    marker.addListener('click', function() {
+        infoWindow.open(renderMap, marker);
+    });
+
+
+
+
+
+
+</script>
+</body>
+</html>
+
