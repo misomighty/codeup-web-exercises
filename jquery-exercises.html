@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JQuery</title>
+</head>
+<body>
+
+<h1 class="codeup" id="h1-id">This is a h1 tag.</h1>
+<h2 class="codeup"> This is a h2 tag.</h2>
+<ul>
+    <li class="codeup">This is a li.</li>
+</ul>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.js"
+integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+crossorigin="anonymous"></script>
+
+<script>
+    "use strict";
+    $(document).ready(function(){
+        $("li").css("font-size","20px");
+        $(".codeup").css("background", "yellow");
+        var soundOff = $("h1").html();
+        alert(soundOff);
+    });
+</script>
+</body>
+
+</html>
