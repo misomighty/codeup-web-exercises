@@ -7,6 +7,7 @@
 
 <h1 class="codeup" id="h1-id">This is a h1 tag.</h1>
 <h2 class="codeup"> This is a h2 tag.</h2>
+<p>I am a paragraph.</p>
 <ul>
     <li class="codeup">This is a li.</li>
 </ul>
@@ -19,10 +20,19 @@ crossorigin="anonymous"></script>
 <script>
     "use strict";
     $(document).ready(function(){
-        $("li").css("font-size","20px");
-        $(".codeup").css("background", "yellow");
-        var soundOff = $("h1").html();
-        alert(soundOff);
+        $("h1").click(function(){
+            $("h1").css("background", "pink");
+        });
+        $("p").dblclick(function(){
+            $("p").css("font-size", "18px");
+        });
+        $("li").hover(function() {
+            $(this).css("background", "red");
+        },
+            function() {
+                $(this).css("background", "white");
+
+        });
     });
 </script>
 </body>
