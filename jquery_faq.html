@@ -43,11 +43,11 @@
     $("dl").after(link);
     $(".doInvis").click(function(){
         $(".invisible").toggle("disappear");
-        highlighted.prev().toggleClass("highlight");
+        highlighted.prev().addClass("highlight");
     });
     $("dd").click(function(){
-        highlighted = $(this).toggleClass("highlight");
-        $("dd").not(this).removeClass("highlight");
+        $("dd").removeClass("highlight");
+        highlighted = $(this).addClass("highlight");
     });
 
 
