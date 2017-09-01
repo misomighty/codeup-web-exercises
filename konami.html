@@ -32,6 +32,9 @@
             color: #ccc;
             font-size: 1.5em;
         }
+        .danger {
+            background-color: #f00;
+        }
     </style>
 </head>
 <body>
@@ -68,6 +71,17 @@
             //removes the heart from the DOM
             $(".heart").last().remove();
         }
+
+        function allHearts() {
+            var imgStr = "<img class=\"heart\" src=\"https://www.spreadshirt.de/blog/files/2016/01/blog_design-gallery_hearts-pixel.jpg\" alt=\"heart\">";
+
+            $(".heart-bar").append().html(imgStr.repeat(30));
+        }
+        function danger(){
+            $(".key-console").effect("highlight", {}, 3000);
+
+
+        }
         function grabInput(){
             userInput.push(keyPressed);
         }
@@ -76,10 +90,15 @@
             counter++;
 
             if(counter === code.length) {
-                console.log("Scored 30 lives!");
+                allHearts();
+                alert("You've scored 30 lives!");
+
             }
         } else {
             console.log("Oh no!");
+            counter = 0;
+            loseHeart();
+            danger();
         }
 
         switch (keyPressed) {
