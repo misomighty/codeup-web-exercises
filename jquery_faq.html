@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Jquery FAQ</title>
+    <style type="text/css">
+        .disappear {
+            display: none;
+        }
+        .highlight {
+            background: hotpink;
+        }
+    </style>
+</head>
+<body>
+
+<DL>
+    <LH>10 fun facts about national parks</LH>
+    <DT>Fact 1<dd>This is the definition of the first term.
+    <DT>Fact 2<dd>This is the definition of the second term.
+    <DT>Fact 3<dd>This is the definition of the first term.
+    <DT>Fact 4<dd>This is the definition of the second term.
+    <DT>Fact 5<dd>This is the definition of the second term.
+    <DT>Fact 6<dd>This is the definition of the second term.
+    <DT>Fact 7<dd>This is the definition of the second term.
+    <DT>Fact 8<dd>This is the definition of the second term.
+    <DT>Fact 9<dd>This is the definition of the second term.
+    <DT>Fact 10<dd>This is the definition of the second term.
+
+
+</DL>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+
+<script>
+    "use strict";
+    var highlighted = $("dd").toggleClass("highlight");
+    var link = "<a href='#' class='doInvis'>Go Invis!</a>";
+    $("dd").attr("class", "invisible");
+    $("dl").after(link);
+    $(".doInvis").click(function(){
+        $(".invisible").toggle("disappear");
+        highlighted.prev().toggleClass("highlight");
+    });
+    $("dd").click(function(){
+        highlighted = $(this).toggleClass("highlight");
+        $("dd").not(this).removeClass("highlight");
+    });
+
+
+</script>
+</body>
+

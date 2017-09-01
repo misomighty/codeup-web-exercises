@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Konami Code</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 0;
+        }
+        .key-console {
+            height: 200px;
+            width: 200px;
+            margin: 0 auto;
+            border: 1px solid #000;
+        }
+        .key-console > * {
+            position: relative;
+            font-size: 9em;
+            margin-top: 5%;
+        }
+
+        .heart-bar img {
+            height: 20px;
+            width: 20px;
+            margin: 5px;
+        }
+        .mini-combo * {
+            display: inline-block;
+            color: #ccc;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Konami Code</h1>
+
+<div class="heart-bar">
+    <img class="heart" src="https://www.spreadshirt.de/blog/files/2016/01/blog_design-gallery_hearts-pixel.jpg" alt="heart">
+    <img class="heart" src="https://www.spreadshirt.de/blog/files/2016/01/blog_design-gallery_hearts-pixel.jpg" alt="heart">
+    <img class="heart" src="https://www.spreadshirt.de/blog/files/2016/01/blog_design-gallery_hearts-pixel.jpg" alt="heart">
+</div>
+
+<div class="key-console"></div>
+<div class="mini-combo">
+    ↑ ↑ ↓ ↓ ← → ← → b a enter
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+
+<script>
+    "use strict";
+
+    var userInput = [];
+    var counter = 0;
+    var code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+
+
+    $(document).keydown(function(event){
+        var keyPressed = event.keyCode;
+        console.log(keyPressed);
+
+        function loseHeart(){
+            //removes the heart from the DOM
+            $(".heart").last().remove();
+        }
+        function grabInput(){
+            userInput.push(keyPressed);
+        }
+
+        if(keyPressed === code[counter]) {
+            counter++;
+
+            if(counter === code.length) {
+                console.log("Scored 30 lives!");
+            }
+        } else {
+            console.log("Oh no!");
+        }
+
+        switch (keyPressed) {
+            case 13:
+                $(".key-console").html("<p>!</p>")
+                $("p").fadeOut(100);
+                grabInput();
+                break;
+            case 37:
+                $(".key-console").html("<p>&larr;</p>");
+                $("p").fadeOut(100);
+                grabInput();
+                break;
+            case 38:
+                $(".key-console").html("<p>&uarr;</p>");
+                $("p").fadeOut(100);
+                grabInput();
+                break;
+            case 39:
+                $(".key-console").html("<p>&rarr;</p>");
+                $("p").fadeOut(100);
+                grabInput();
+                break;
+            case 40:
+                $(".key-console").html("<p>&darr;</p>");
+                $("p").fadeOut(100);
+                grabInput();
+                break;
+            case 65:
+                $(".key-console").html("<p>A</p>");
+                $("p").fadeOut(100);
+                grabInput();
+                break;
+            case 66:
+                $(".key-console").html("<p>B</p>");
+                $("p").fadeOut(800);
+                grabInput();
+                break;
+            default:
+                $(".key-console").html("<p>X</p>");
+                $("p").fadeOut(800);
+                grabInput();
+                loseHeart();
+                break;
+        }
+
+
+    });
+
+
+
+
+</script>
+</body>
+
+</html>
