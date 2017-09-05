@@ -115,18 +115,32 @@
 
 <script>
     "use strict";
-    var highlighted = $("dd").toggleClass("highlight");
-    var link = "<a href='#' class='doInvis'>Go Invis!</a>";
-    $("dd").attr("class", "invisible");
-    $("dl").after(link);
-    $(".doInvis").click(function(){
-        $(".invisible").toggle("disappear");
-        highlighted.prev().addClass("highlight");
-    });
-    $("dd").click(function(){
-        $("dd").removeClass("highlight");
-        highlighted = $(this).addClass("highlight");
-    });
+//    var highlighted = $("dd").toggleClass("highlight");
+//    var link = "<a href='#' class='doInvis'>Go Invis!</a>";
+//    $("dd").attr("class", "invisible");
+//    $("dl").after(link);
+//    $(".doInvis").click(function(){
+//        $(".invisible").toggle("disappear");
+//        highlighted.prev().addClass("highlight");
+//    });
+//    $("dd").click(function(){
+//        $("dd").removeClass("highlight");
+//        highlighted = $(this).addClass("highlight");
+//    });
+
+    function highlightAllLastListItem(index, li) {
+        $('ul').each(highlightListItem)
+    }
+
+    $("#highlight").on("Click", highlightAllLastListItem);
+
+//    $("button").click(highlightAllLastListItem);
+
+    function highlightListItem () {
+        // 'this' is the ul DOM element
+        $(this).chidren().last().css("background-color", "yellow");
+    }
+
 
     $("button").click(function() {
             $("li:last-child").each(function(){
@@ -134,7 +148,24 @@
             });
     });
 
+    $("h3").on("click", makeAllListItemsBold);
 
+    function makeAllListItemsBold() {
+        $(this)
+            .next() // ul
+            .children() // li
+            .css("font-weight", "bold");
+    }
+
+    $("li").on("click", makeFirstSiblingBlue);
+    function makeFirstSiblingBlue() {
+        // 'this' is whatever li that's clicked on
+        $(this)
+            .parent() // ul
+            .children() // li (siblings)
+            .first()
+            .css("color", "blue");
+    }
 </script>
 </body>
 </html>
