@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Jquery FAQ</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style type="text/css">
         .disappear {
             display: none;
@@ -14,14 +15,38 @@
 </head>
 <body>
 
-<h2 style="display: none">Register NOW</h2>
-<div>
-    <h1>
-        Would you like to sign up for our newsletter?
-    </h1>
-
-    <span> X</span>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Would you like to register</h4>
+            </div>
+            <div class="modal-body">
+                For more news and information please register.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">No thanks.</button>
+                <button type="button" class="btn btn-primary">Sure!</button>
+            </div>
+        </div>
+    </div>
 </div>
+
+<div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Warning!</strong> You're missing out if you don't register for the newsletter!
+</div>
+
+<!--<h2 style="display: none">Register NOW</h2>-->
+<!--<div>-->
+    <!--<h1>-->
+        <!--Would you like to sign up for our newsletter?-->
+    <!--</h1>-->
+
+    <!--<span id="close"> X</span>-->
+<!--</div>-->
 
 <dl>
     <dt>What government agency oversees the National Park Service?</dt>
@@ -71,7 +96,7 @@
 <a href="#" id="link">Display Answers</a>
 <br>
 <h3 class="heading">Acadia National Park</h3>
-<ul>
+<ul class="facts">
     <li>
         President Wilson originally established the park as Sieur de Monts National Monument.
     </li>
@@ -86,7 +111,7 @@
     </li>
 </ul>
 <h3 class="heading">Korean War Veterans Memorial</h3>
-<ul>
+<ul class="facts">
     <li class=>
         At the soldiers' feet granite slabs represent the numerous obstacles these men encountered in war. Numerous juniper bushes surrounding them symbolize the rough terrain they traversed.
     </li>
@@ -101,7 +126,7 @@
     </li>
 </ul>
 <h3 class="heading">Yellowstone National Park</h3>
-<ul>
+<ul class="facts">
     <li>
         Yellowstone is larger than the states of Rhode Island and Delaware combined.
     </li>
@@ -118,12 +143,16 @@
 
 <button>Click meh</button>
 
+
 <script src="https://code.jquery.com/jquery-2.2.4.js"
         integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
         crossorigin="anonymous"></script>
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 <script>
     "use strict";
+    //Essential methods exercise -----------------------No walkthru
 //    var highlighted = $("dd").toggleClass("highlight");
 //    var link = "<a href='#' class='doInvis'>Go Invis!</a>";
 //    $("dd").attr("class", "invisible");
@@ -177,18 +206,37 @@
 //            .css("color", "blue");
 //    }
     // Effects Exercise -----------------------
-    $("span").on("click", fadeDiv);
-    function fadeDiv () {
-        $("div").fadeOut();
-    }
-    $("h3").next().hide();
-    $("h3").on("click", toggleParkFacts);
+//    $("span").on("click", fadeDiv);
+//    function fadeDiv () {
+//        $("div").fadeOut();
+//    }
+//    $("h3").next().hide();
+//    $("h3").on("click", toggleParkFacts);
+//
+//    function toggleParkFacts () {
+//        $(this).next().slideToggle();
+//    }
+//
+//    setTimeout(function(){
+//        $("#myModal").modal();
+//    });
 
-    function toggleParkFacts () {
-        $(this).next().slideToggle();
-    }
+    // Fer Walkthru ---------------------------
+        $("#close").click(function() {
+           $(this).parent().hide();
+        });
 
-    $("h2").delay(8000).fadeIn("slow");
+        var facts = $(".facts")
+        facts.hide();
+
+        facts.prev().click(function () {
+           $(this).next().slideToggle();
+        });
+
+
+
+
+
 
 
 
