@@ -14,6 +14,15 @@
 </head>
 <body>
 
+<h2 style="display: none">Register NOW</h2>
+<div>
+    <h1>
+        Would you like to sign up for our newsletter?
+    </h1>
+
+    <span> X</span>
+</div>
+
 <dl>
     <dt>What government agency oversees the National Park Service?</dt>
     <dd>The National Park Service is a bureau of the Department of the Interior. Directly overseeing its operation is the Department's Assistant Secretary for Fish, Wildlife and Parks.
@@ -128,44 +137,61 @@
 //        highlighted = $(this).addClass("highlight");
 //    });
 
-    function highlightAllLastListItem(index, li) {
-        $('ul').each(highlightListItem)
+    //Luis Walthru--------------------------------
+//    function highlightAllLastListItem(index, li) {
+//        $('ul').each(highlightListItem)
+//    }
+//
+//    $("#highlight").on("Click", highlightAllLastListItem);
+//
+////    $("button").click(highlightAllLastListItem);
+//
+//    function highlightListItem () {
+//        // 'this' is the ul DOM element
+//        $(this).chidren().last().css("background-color", "yellow");
+//    }
+//
+//
+//    $("button").click(function() {
+//            $("li:last-child").each(function(){
+//                $(this).css("color", "#f00");
+//            });
+//    });
+//
+//    $("h3").on("click", makeAllListItemsBold);
+//
+//    function makeAllListItemsBold() {
+//        $(this)
+//            .next() // ul
+//            .children() // li
+//            .css("font-weight", "bold");
+//    }
+//
+//    $("li").on("click", makeFirstSiblingBlue);
+//    function makeFirstSiblingBlue() {
+//        // 'this' is whatever li that's clicked on
+//        $(this)
+//            .parent() // ul
+//            .children() // li (siblings)
+//            .first()
+//            .css("color", "blue");
+//    }
+    // Effects Exercise -----------------------
+    $("span").on("click", fadeDiv);
+    function fadeDiv () {
+        $("div").fadeOut();
+    }
+    $("h3").next().hide();
+    $("h3").on("click", toggleParkFacts);
+
+    function toggleParkFacts () {
+        $(this).next().slideToggle();
     }
 
-    $("#highlight").on("Click", highlightAllLastListItem);
-
-//    $("button").click(highlightAllLastListItem);
-
-    function highlightListItem () {
-        // 'this' is the ul DOM element
-        $(this).chidren().last().css("background-color", "yellow");
-    }
+    $("h2").delay(8000).fadeIn("slow");
 
 
-    $("button").click(function() {
-            $("li:last-child").each(function(){
-                $(this).css("color", "#f00");
-            });
-    });
 
-    $("h3").on("click", makeAllListItemsBold);
-
-    function makeAllListItemsBold() {
-        $(this)
-            .next() // ul
-            .children() // li
-            .css("font-weight", "bold");
-    }
-
-    $("li").on("click", makeFirstSiblingBlue);
-    function makeFirstSiblingBlue() {
-        // 'this' is whatever li that's clicked on
-        $(this)
-            .parent() // ul
-            .children() // li (siblings)
-            .first()
-            .css("color", "blue");
-    }
 </script>
 </body>
 </html>
