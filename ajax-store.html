@@ -3,68 +3,99 @@
 <head>
     <title>Online Store</title>
 </head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <body>
+<div class="container">
+    <h1>My Tool Store</h1>
 
-<h1>My Tool Store</h1>
-
-<table id="products">
-    <thead>
+    <table id="products" class="table table-hover table-striped">
+        <thead>
         <tr>
             <th>Title</th>
             <th>Quantity</th>
             <th>Price</th>
             <th>Categories</th>
         </tr>
-    </thead>
-    <tbody id="insertProducts">
-    </tbody>
-</table>
+        </thead>
+        <tbody id="insertProducts">
+        </tbody>
+    </table>
 
-<button>Refresh</button>
+    <button class="btn btn-success">Refresh</button>
+</div>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
 (function() {
     "use strict";
-    // TODO: Create an ajax GET request for /data/inventory.json
-    var $items = [];
-    function loadData() {
-        $.ajax("data/inventory.json").done(function(data, status, jqXhr) {
-//        alert("AJAX call completed successfully!");
-//        console.log("Request status: " + status);
-//        console.log("Data returned from server:");
-//        console.log(data);
-            console.log(data);
+//    // TODO: Create an ajax GET request for /data/inventory.json
+//    var $items = [];
+//    function loadData() {
+//        $.ajax("data/inventory.json").done(function(data, status, jqXhr) {
+////        alert("AJAX call completed successfully!");
+////        console.log("Request status: " + status);
+////        console.log("Data returned from server:");
+////        console.log(data);
+//            console.log(data);
+//
+//            var items = "";
+//            data.forEach(function(product) {
+//                items = "<tr><td>"  + product.title + "</td>" +
+//                    "<td>"  + product.quantity + "</td>" +
+//                    "<td>"  + product.price + "</td>" +
+//                    "<td>"  + product.categories + "</td>" + "</tr>";
+//
+//                $("#insertProducts").append(items);
+//            });
+//
+//        });
+//    }
+//
+//    loadData();
+//
+//    $("button").on('click', function(){
+//        $('#insertProducts').html("");
+//        loadData();
+//    });
+//
+//
+//    // TODO: Take the data from inventory.json and append it to the products table
+//    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+//    //             its contents and fields
+//    //       HINT: You will want to target #insertProducts for your new HTML elements
 
-            var items = "";
-            data.forEach(function(product) {
-                items = "<tr><td>"  + product.title + "</td>" +
-                    "<td>"  + product.quantity + "</td>" +
-                    "<td>"  + product.price + "</td>" +
-                    "<td>"  + product.categories + "</td>" + "</tr>";
 
-                $("#insertProducts").append(items);
-            });
+//----------------Fer Walkthru-----------------
+    var onSuccess = function(tools) {
 
+        var html = "";
+
+        tools.forEach(function(tool) {
+            html += "<tr>" +
+                "<td>" + tool.title + "</td>" +
+                "<td>" + tool.quantity+ "</td>" +
+                "<td>" + tool.price + "</td>" +
+                "<td>" + tool.categories + "</td>" +
+                "</tr>";
         });
+
+        $("#insertProducts").append(html);
+
+    };
+
+    $.ajax("data/inventory.json").done(onSuccess);
+
+    var updateBtn = $("button");
+
+    function loadData() {
+        $.ajax("data/inventory.json").done(onSuccess);
     }
-
-    loadData();
-
-    $("button").on('click', function(){
-        $('#insertProducts').html("");
+    updateBtn.click(function(){
+        $("tbody").empty();
         loadData();
     });
-
-
-    // TODO: Take the data from inventory.json and append it to the products table
-    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-    //             its contents and fields
-    //       HINT: You will want to target #insertProducts for your new HTML elements
-
-
-
 
 })();
 </script>
