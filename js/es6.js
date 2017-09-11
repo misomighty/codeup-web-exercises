@@ -49,14 +49,7 @@ let emails = [];
 let names = [];
 
 // TODO: rewrite the following using arrow functions
-// users.forEach(function(user) {
-//   return emails.push(user.email);
-// });
-
 users.forEach ((user) => emails.push(user.email));
-// users.forEach(function(user) {
-//   return names.push(user.name);
-// });
 users.forEach ((user) => names.push(user.name));
 
 // TODO: replace `var` with `let` in the following declaration
@@ -84,7 +77,7 @@ let list = '<ul>';
 // TODO: rewrite the following loop to use a for..of loop
 
   for(let developer of developers) {
-    console.log(`${list} <li> ${developer} </li></ul>`);
+    list+= (`<li> ${developer}</li></ul>`);
   }
 
   // TODO: rewrite the assignment below to use template strings
