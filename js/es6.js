@@ -77,10 +77,10 @@ let list = '<ul>';
 // TODO: rewrite the following loop to use a for..of loop
 
   for(let developer of developers) {
-    list+= (`<li> ${developer}</li></ul>`);
+    list+= (`<li> ${developer}</li>`);
   }
 
   // TODO: rewrite the assignment below to use template strings
   // list += '<li>' + developer + '</li>';
 
-// list += '</ul>';
+list += '</ul>';
